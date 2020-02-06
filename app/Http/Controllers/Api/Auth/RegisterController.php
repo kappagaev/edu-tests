@@ -18,10 +18,7 @@ class RegisterController extends Controller
      */
     public function __invoke(RegisterFormRequest $request)
     {
-        $user = User::create(array_merge(
-            $request->only('name', 'email'),
-            ['password' => bcrypt($request->password)],
-        ));
+        $user = User::create($request->input());
 
         return response()->json([
             'message' => 'You were successfully registered. Use your email and password to sign in.'
