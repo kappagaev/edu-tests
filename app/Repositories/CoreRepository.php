@@ -6,7 +6,7 @@ abstract class CoreRepository
 {
 	private $model;
 
-	abstract public function getModelClass();
+	abstract protected function getModelClass();
 
 	public function __construct()
 	{
