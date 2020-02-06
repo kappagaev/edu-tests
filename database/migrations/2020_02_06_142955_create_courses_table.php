@@ -17,7 +17,7 @@ class CreateCoursesTable extends Migration
             $table->bigIncrements('id');
             $table->string('title', 50);
             $table->text('description');
-            $table->string('preview', 20);
+            $table->string('preview', 50);
             $table->timestamps();
         });
     }
