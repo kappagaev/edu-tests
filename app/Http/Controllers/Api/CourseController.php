@@ -7,7 +7,7 @@ use App\Models\Course;
 use App\Repositories\CourseRepository;
 use Illuminate\Http\Request;
 
-class CourseCountroller extends Controller
+class CourseController extends Controller
 {
     private $courseRepository;
 
@@ -52,9 +52,15 @@ class CourseCountroller extends Controller
      * @param  \App\Models\Course  $course
      * @return \Illuminate\Http\Response
      */
-    public function show(Course $course)
+    public function show($id)
     {
-        //
+        $course = $this->courseRepository->single($id);
+
+        if (!$course) {
+            return response()->json(['error' => ['course not found']], 404);
+        }
+
+        return $course;
     }
 
     /**

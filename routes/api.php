@@ -19,4 +19,5 @@ Route::group(['namespace' => 'Api'], function () {
         Route::post('login', 'LoginController');
         Route::post('logout', 'LogoutController')->middleware('auth:api');
     });
+    Route::get('course/{id}', 'CourseController@show');
 });

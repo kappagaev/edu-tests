@@ -15,4 +15,9 @@ class CourseRepository extends CoreRepository
 	{
 		return $this->start()->first();
 	}
+
+	public function single($id)
+	{
+		return $this->start()->find($id);
+	}
 }
