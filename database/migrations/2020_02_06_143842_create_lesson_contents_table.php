@@ -15,6 +15,7 @@ class CreateLessonContentsTable extends Migration
     {
         Schema::create('lesson_contents', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('lesson_id');
             $table->timestamps();
         });
     }
