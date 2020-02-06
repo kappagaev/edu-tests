@@ -9,4 +9,9 @@ class Course extends Model
     protected $fillable = [
         'title', 'preview', 'description',
     ];
+
+    public function course_modules()
+    {
+    	return $this->hasMany(CourseModule::class, 'course_id');
+    }
 }
